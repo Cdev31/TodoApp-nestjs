@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+   image: mongo:5
+   restart: always
+   container_name: practicedb
+   ports:
+    - 27017:27017
+   volumes:
+    - ./data:/db/data
+   environment:
+    - DB_USER = {DB_USER}
+    - DB_PASSWORD = {DB_PASSWORD}
+
